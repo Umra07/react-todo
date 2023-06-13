@@ -1,0 +1,26 @@
+section {
+  position: relative;
+  border-bottom: 3px solid #CFCBC8;
+  grid-area: tasks-list;
+}
+
+.list {
+  
+
+  
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #00718F;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: #013F4E;
+    }
+  }
+}
+
+

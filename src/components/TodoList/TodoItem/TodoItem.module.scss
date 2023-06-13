@@ -1,0 +1,57 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  background-color: #fff;
+  div {
+    display: flex;
+    align-items: center;
+    .mark {
+      transition: background-color .4s ease;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid rgb(230, 230, 230);
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .title {
+      transition: all .4s ease;
+      transform: translateY(-1px);
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  button {
+    font-weight: 20px;
+    width: 23px;
+    height: 23px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    &:hover {
+      svg:hover {
+        line {
+          stroke: rgb(228, 54, 54);
+          transition: stroke .15s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.completed {
+  transition: background-color .15s ease;
+  background-color: #00718F;
+}
+
+.done {
+  text-decoration: line-through;
+  color: rgb(195, 195, 195);
+  transition: all .4s ease;
+}

@@ -1,0 +1,20 @@
+.input {
+  grid-area: input;
+  border-top-right-radius: 10px;
+  padding: 5px 15px;
+  min-width: 500px;
+  height: 70px;
+  font-size: 30px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #cfcbc8;
+
+  // border-bottom: 3px solid rgb(161, 161, 161);
+  color: rgb(63, 63, 63);
+  &::placeholder {
+    font-style: italic;
+    font-size: 27px;
+    color: rgb(207, 207, 207);
+  }
+}

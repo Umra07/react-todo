@@ -1,0 +1,99 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "title": "dsafdsafsdaf",
+      "colorId": "1",
+      "color": {
+        "id": 1,
+        "hex": "#C9D1D3",
+        "name": "grey"
+      },
+      "tasks": []
+    },
+    {
+      "id": 2,
+      "title": "dsafdsafsdaf",
+      "colorId": "1"
+    },
+    {
+      "id": 3,
+      "title": "dfjksghdfskjlhgdfshjk",
+      "colorId": "1"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "chacha",
+      "completed": true,
+      "listId": 1,
+      "id": 1
+    },
+    {
+      "title": "jhlkjhklhkjjkh",
+      "completed": true,
+      "listId": 1,
+      "id": 2
+    },
+    {
+      "title": "dsklafjafl;jdsaklfhdsflk",
+      "completed": true,
+      "listId": 1,
+      "id": 3
+    },
+    {
+      "title": "dsklafjafl;jdsaklfhdsflk",
+      "completed": false,
+      "listId": 2,
+      "id": 4
+    },
+    {
+      "title": "dfsgkdfg;fdlsgjk",
+      "completed": false,
+      "listId": 1,
+      "id": 5
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "hex": "#C9D1D3",
+      "name": "grey"
+    },
+    {
+      "id": 2,
+      "hex": "#42B883",
+      "name": "green"
+    },
+    {
+      "id": 3,
+      "hex": "#64C4ED",
+      "name": "blue"
+    },
+    {
+      "id": 4,
+      "hex": "#FFBBCC",
+      "name": "pink"
+    },
+    {
+      "id": 5,
+      "hex": "#B6E6BD",
+      "name": "lime"
+    },
+    {
+      "id": 6,
+      "hex": "#C355F5",
+      "name": "purple"
+    },
+    {
+      "id": 7,
+      "hex": "#110133",
+      "name": "black"
+    },
+    {
+      "id": 8,
+      "hex": "#FF6464",
+      "name": "red"
+    }
+  ]
+}
