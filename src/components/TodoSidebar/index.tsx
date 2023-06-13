@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import classes from './TodoSidebar.module.scss';
-import './date-picker.scss';
 import Modal from '../Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import // deleteList,

@@ -27,18 +27,4 @@ body {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   // box-shadow: 7px 8px 34px -13px rgba(66, 68, 90, 1);
-
-  h1 {
-    grid-area: logo;
-    border-top-left-radius: 10px;
-    margin: 0;
-    padding: 0;
-    font-size: 50px;
-    font-weight: 300;
-    padding-left: 80px;
-    background-color: #fff;
-    color: #00718f;
-    border-bottom: 3px solid #cfcbc8;
-    border-right: 3px solid #cfcbc8;
-  }
 }
