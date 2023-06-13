@@ -10,13 +10,10 @@ import // deleteList,
 // import { addTasks, fetchTodos } from '../../features/todosSlice';
 
 import { ReactComponent as CloseSvg } from '../../assets/close.svg';
-import { ReactComponent as FolderIcon } from '../../assets/folder.svg';
 import { RootState, useAppDispatch } from '../../features/store';
 import { removeList, selectList } from '../../features/todoAppSlice';
 
 const TodoSidebar = () => {
-  const [modalIsVisible, setModalIsVisible] = useState<boolean>(false);
-
   const todosLists = useSelector((state: RootState) => state.app.todosLists);
   const dispatch = useAppDispatch();
 
@@ -31,7 +28,6 @@ const TodoSidebar = () => {
 
   return (
     <>
-      {modalIsVisible && <Modal setModalIsVisible={setModalIsVisible} />}
       <aside className={classes.sidebar}>
         <div className={classes.sidebar__top}>
           <ul className={classes['folders-list']}>
@@ -51,12 +47,6 @@ const TodoSidebar = () => {
             ))}
           </ul>
         </div>
-        <button
-          className={classes['sidebar-btn']}
-          onClick={() => setModalIsVisible((prevState) => !prevState)}>
-          Create new folder
-          <FolderIcon />
-        </button>
       </aside>
     </>
   );

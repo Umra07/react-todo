@@ -1,13 +1,19 @@
 .logo {
   grid-area: logo;
-  border-top-left-radius: 10px;
   margin: 0;
   padding: 0;
-  font-size: 50px;
+  font-size: 100px;
   font-weight: 300;
-  padding-left: 80px;
+  padding-right: 80px;
   background-color: #fff;
   color: #00718f;
-  border-bottom: 3px solid #cfcbc8;
-  border-right: 3px solid #cfcbc8;
+  height: 10vh;
+  display: grid;
+  place-items: center;
+  border-bottom: 6px solid #cfcbc8;
+  border-right: 6px solid #cfcbc8;
+
+  @media (max-width: 1600px) {
+    font-size: 56px;
+  }
 }

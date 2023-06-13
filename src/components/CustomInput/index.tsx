@@ -1,5 +1,5 @@
 import { KeyboardEvent, useState } from 'react';
-import classes from './TodoInput.module.scss';
+import classes from './CustomInput.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../features/store';
 

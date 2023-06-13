@@ -42,15 +42,15 @@ const Filters = () => {
   return (
     <nav className={classes.nav}>
       <div className={classes.actions}>
-        <h3>Actions</h3>
+        <h3 className={classes.heading}>Actions</h3>
         <div className={classes[`actions-btns`]}>
-          <button>Mark all completed</button>
-          <button>Clear completed</button>
+          <button className={classes[`action-btn`]}>Mark all completed</button>
+          <button className={classes[`action-btn`]}>Clear completed</button>
         </div>
       </div>
 
       <div className={classes.active}>
-        <h3>Remaining Todos</h3>
+        <h3 className={classes.heading}>Remaining Todos</h3>
         <p>
           {remainingTodos.length === 1
             ? remainingTodos.length + ' item left'
@@ -59,15 +59,19 @@ const Filters = () => {
       </div>
 
       <ul className={classes['status-filter']}>
-        <h3>Filter by Status</h3>
+        <h3 className={classes.heading}>Filter by Status</h3>
         <li>
-          <button>All</button>
+          <button className={classes['status-btn']}>All</button>
         </li>
         <li>
-          <button onClick={clickedActiveTodos}>Active</button>
+          <button className={classes['status-btn']} onClick={clickedActiveTodos}>
+            Active
+          </button>
         </li>
         <li>
-          <button onClick={ClickedCompletedTodos}>Completed</button>
+          <button className={classes['status-btn']} onClick={ClickedCompletedTodos}>
+            Completed
+          </button>
         </li>
       </ul>
     </nav>

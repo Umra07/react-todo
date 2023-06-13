@@ -10,21 +10,24 @@ body {
 }
 
 .app {
-  // border: 1px solid #CFCBC8;
   border-radius: 10px;
   margin: 0 auto;
-  max-width: 1170px;
   margin-inline: auto;
   margin-top: 50px;
   display: grid;
-  grid-template-areas:
-    'logo input input'
-    'side-bar tasks-list tasks-list'
-    'side-bar tasks-list tasks-list'
-    'side-bar tasks-list tasks-list'
-    'side-bar filters filters';
 
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  @media (max-width: 2560px) {
+    max-width: 2560px;
+    display: grid;
+    grid-template-areas:
+      'logo input input'
+      'side-bar tasks-list tasks-list'
+      'side-bar tasks-list tasks-list'
+      'button filters filters';
+
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
   // box-shadow: 7px 8px 34px -13px rgba(66, 68, 90, 1);
 }

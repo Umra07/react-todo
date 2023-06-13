@@ -1,0 +1,43 @@
+.wrapper {
+  grid-area: button;
+  border-right: 6px solid #cfcbc8;
+}
+
+.btn {
+  padding-block: 70px;
+  position: relative;
+  display: block;
+  width: inherit;
+  border: none;
+  cursor: pointer;
+  background-color: #00718f;
+  color: #fff;
+  font-size: 60px;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+  &:hover {
+    background-color: #0a5365;
+  }
+  &:active {
+    color: rgb(215, 215, 215);
+    path {
+      fill: rgb(215, 215, 215);
+    }
+  }
+
+  svg {
+    width: 60px;
+    height: 60px;
+
+    margin-left: 10px;
+  }
+
+  @media (max-width: 1800px) {
+    font-size: 36px;
+    padding-block: 30px;
+    svg {
+      width: 30px;
+      height: 28px;
+    }
+  }
+}

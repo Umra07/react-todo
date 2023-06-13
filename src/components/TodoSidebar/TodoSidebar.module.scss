@@ -1,19 +1,22 @@
 .sidebar {
-  height: 70vh;
+  height: 55vh;
   background-color: #fff;
-  border-right: 3px solid #CFCBC8;
-  border-bottom-left-radius: 10px;
+  border-right: 6px solid #cfcbc8;
+  border-bottom: 6px solid #cfcbc8;
   grid-area: side-bar;
-  min-width: 280px;
-  
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.sidebar__top {
+  flex-grow: 1;
+  background-color: #e3e3e3;
+}
 
 .folders-list {
-  background-color: #E3E3E3;
+  background-color: #e3e3e3;
   width: 100%;
-  height: 393.66px;
   li {
     display: flex;
     width: 100%;
@@ -22,36 +25,40 @@
   .folders-btn {
     width: 85%;
     padding: 10px 0;
-    font-size: 18px;
-    background-color: #0BA5BE;
+    font-size: 60px;
+    background-color: #0ba5be;
     color: #fff;
     cursor: pointer;
     border: none;
     border-bottom: 1px solid rgb(230, 230, 230);
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     &:hover {
       background-color: rgb(255, 255, 171);
-      color: #00718F;
+      color: #00718f;
     }
     &:active {
       background-color: rgb(236, 236, 71);
+    }
+
+    @media (max-width: 1600px) {
+      font-size: 28px;
     }
   }
 
   .folders-delete-btn {
     width: 15%;
     cursor: pointer;
-    background-color: #0BA5BE;
+    background-color: #0ba5be;
     border: none;
     border-bottom: 1px solid rgb(230, 230, 230);
     border-left: 1px solid rgb(230, 230, 230);
-    transition: background-color .25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
     &:hover {
       background-color: rgb(255, 255, 171);
       svg {
         line {
           stroke: rgb(246, 56, 56);
-          transition: stroke .25s ease-in-out;
+          transition: stroke 0.25s ease-in-out;
         }
       }
     }
@@ -59,42 +66,15 @@
       background-color: rgb(236, 236, 71);
     }
     svg {
-      width: 25px;
-      height: 25px;
+      width: 60px;
+      height: 60px;
+
       margin-top: 3px;
+
+      @media (max-width: 1600px) {
+        width: 25px;
+        height: 25px;
+      }
     }
-  }
-    
-}
-
-
-.sidebar-btn {
-  position: relative;
-  width: 100%;
-  margin-bottom: 52px;
-  padding: 26px 0;
-  border: none;
-  cursor: pointer;
-  background-color: #00718F;
-  color: #fff;
-  font-size: 24px;
-  transition: background-color .2s ease-in-out;
-  border-top: 3px solid #CFCBC8;
-  &:hover {
-    background-color: #0a5365;
-
-  }
-  &:active {
-    color: rgb(215, 215, 215);
-    path {
-      fill: rgb(215, 215, 215)
-    }
-  }
-
-  svg {
-    width: 24px;
-    height: 21px;
-    margin-left: 10px;
-    transform: translateY(4px);
   }
 }

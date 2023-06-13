@@ -1,26 +1,22 @@
 section {
   position: relative;
-  border-bottom: 3px solid #CFCBC8;
+  border-bottom: 6px solid #cfcbc8;
+  height: 55vh;
   grid-area: tasks-list;
 }
 
 .list {
-  
-
-  
   overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 5px;
   }
   &::-webkit-scrollbar-thumb {
-    background: #00718F;
+    background: #00718f;
     border-radius: 5px;
     cursor: pointer;
     &:hover {
-      background: #013F4E;
+      background: #013f4e;
     }
   }
 }
-
-
