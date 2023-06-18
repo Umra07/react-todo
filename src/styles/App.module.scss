@@ -20,9 +20,9 @@ body {
     max-width: 2560px;
     display: grid;
     grid-template-areas:
-      'logo input input'
-      'side-bar tasks-list tasks-list'
-      'side-bar tasks-list tasks-list'
+      'logo tasks tasks'
+      'side-bar tasks tasks'
+      'side-bar tasks tasks'
       'button filters filters';
 
     grid-column-gap: 0px;

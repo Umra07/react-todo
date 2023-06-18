@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../redux/store';
+import { removeList, selectList } from '../../redux/todoAppSlice';
+import { NavLink } from 'react-router-dom';
+
 import classes from './TodoSidebar.module.scss';
-import Modal from '../Modal';
-import { useDispatch, useSelector } from 'react-redux';
-import // deleteList,
-// deleteListRequest,
-// fetchListsTodos,
-// selectAllLists,
-'../../features/listsSlice';
-// import { addTasks, fetchTodos } from '../../features/todosSlice';
 
 import { ReactComponent as CloseSvg } from '../../assets/close.svg';
-import { RootState, useAppDispatch } from '../../features/store';
-import { removeList, selectList } from '../../features/todoAppSlice';
 
 const TodoSidebar = () => {
   const todosLists = useSelector((state: RootState) => state.app.todosLists);
@@ -23,7 +17,6 @@ const TodoSidebar = () => {
 
   const listClickedHadler = (id: string) => {
     dispatch(selectList(id));
-    console.log(id, 'working');
   };
 
   return (
@@ -36,13 +29,16 @@ const TodoSidebar = () => {
                 <button
                   className={classes['folders-btn']}
                   onClick={() => listClickedHadler(list.id)}>
-                  {list.name}
+                  <NavLink className={classes['nav-btn']} to={`lists/${list.id}`}>
+                    {list.name}
+                  </NavLink>
                 </button>
-                <button
+                <NavLink
+                  to="/"
                   className={classes['folders-delete-btn']}
                   onClick={() => handleDeleteButtonClicked(list.id)}>
                   <CloseSvg />
-                </button>
+                </NavLink>
               </li>
             ))}
           </ul>

@@ -7,15 +7,27 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #00718f;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: #013f4e;
+    }
+  }
 }
 
 .sidebar__top {
   flex-grow: 1;
-  background-color: #e3e3e3;
 }
 
 .folders-list {
-  background-color: #e3e3e3;
+  background-color: #ffffff;
   width: 100%;
   li {
     display: flex;
@@ -24,7 +36,6 @@
 
   .folders-btn {
     width: 85%;
-    padding: 10px 0;
     font-size: 60px;
     background-color: #0ba5be;
     color: #fff;
@@ -33,8 +44,12 @@
     border-bottom: 1px solid rgb(230, 230, 230);
     transition: all 0.2s ease-in-out;
     &:hover {
-      background-color: rgb(255, 255, 171);
+      background-color: rgb(255, 255, 255);
       color: #00718f;
+
+      .nav-btn {
+        color: #0ba5be;
+      }
     }
     &:active {
       background-color: rgb(236, 236, 71);
@@ -46,15 +61,16 @@
   }
 
   .folders-delete-btn {
+    display: grid;
+    place-items: center;
     width: 15%;
     cursor: pointer;
     background-color: #0ba5be;
-    border: none;
     border-bottom: 1px solid rgb(230, 230, 230);
     border-left: 1px solid rgb(230, 230, 230);
     transition: background-color 0.25s ease-in-out;
     &:hover {
-      background-color: rgb(255, 255, 171);
+      background-color: rgb(255, 255, 255);
       svg {
         line {
           stroke: rgb(246, 56, 56);
@@ -77,4 +93,13 @@
       }
     }
   }
+}
+
+.nav-btn {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0;
 }

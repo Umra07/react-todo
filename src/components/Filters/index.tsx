@@ -1,51 +1,34 @@
 import classes from './Filters.module.scss';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../features/store';
-// import { selectAllTasks, selectListId } from '../../features/todosSlice';
-// import { changeAllTasksStatusRequest } from '../../features/filtersSlice';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../redux/store';
+import { sortedTodos, statusFilterChanged } from '../../redux/todoAppSlice';
 
 const Filters = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const selectedList = useSelector((state: RootState) => state.app.selectedList);
   const todos = useSelector((state: RootState) => state.app.todos);
 
-  const completedTasks = todos.map((task) => {
-    if (selectedList && task.listId === selectedList.id) {
-      return { ...task, completed: true };
-    }
-  });
-
-  const lists = useSelector((state: RootState) => state.app.todosLists);
-
-  // const list = listId ? lists.find((item) => item.id === listId) : null;
-
-  // const toggleStatus = () => {
-  //   dispatch(changeAllTasksStatusRequest({ listId, list, completedTasks }));
-  // };
-
-  const remainingTodos = todos.filter((todo) => {
-    if (selectedList && todo.listId === selectedList.id) {
-      return todo.completed !== true;
-    }
-  });
-
-  const clickedActiveTodos = () => {
-    // dispatch(showActiveTodos());
-  };
-
-  const ClickedCompletedTodos = () => {
-    // dispatch(showCompletedTodos());
-  };
+  const remainingTodos = todos.filter(
+    (todo) => selectedList && todo.listId === selectedList.id && todo.completed !== true,
+  );
 
   return (
     <nav className={classes.nav}>
       <div className={classes.actions}>
         <h3 className={classes.heading}>Actions</h3>
         <div className={classes[`actions-btns`]}>
-          <button className={classes[`action-btn`]}>Mark all completed</button>
-          <button className={classes[`action-btn`]}>Clear completed</button>
+          <button
+            className={classes[`action-btn`]}
+            onClick={() => dispatch(statusFilterChanged(true))}>
+            Mark all completed
+          </button>
+          <button
+            className={classes[`action-btn`]}
+            onClick={() => dispatch(statusFilterChanged(false))}>
+            Clear completed
+          </button>
         </div>
       </div>
 
@@ -61,15 +44,19 @@ const Filters = () => {
       <ul className={classes['status-filter']}>
         <h3 className={classes.heading}>Filter by Status</h3>
         <li>
-          <button className={classes['status-btn']}>All</button>
+          <button className={classes['status-btn']} onClick={() => dispatch(sortedTodos(''))}>
+            All
+          </button>
         </li>
         <li>
-          <button className={classes['status-btn']} onClick={clickedActiveTodos}>
+          <button className={classes['status-btn']} onClick={() => dispatch(sortedTodos('active'))}>
             Active
           </button>
         </li>
         <li>
-          <button className={classes['status-btn']} onClick={ClickedCompletedTodos}>
+          <button
+            className={classes['status-btn']}
+            onClick={() => dispatch(sortedTodos('completed'))}>
             Completed
           </button>
         </li>

@@ -1,11 +1,8 @@
-section {
+.todo-list {
   position: relative;
   border-bottom: 6px solid #cfcbc8;
   height: 55vh;
   grid-area: tasks-list;
-}
-
-.list {
   overflow-y: auto;
 
   &::-webkit-scrollbar {
@@ -19,4 +16,12 @@ section {
       background: #013f4e;
     }
   }
+}
+
+.heading {
+  padding: 10px 10px 0 0;
+  font-size: 18px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
 }

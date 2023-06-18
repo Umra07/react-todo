@@ -2,6 +2,7 @@ export interface initialStateTypes {
   todosLists: TodoListType[];
   selectedList: TodoListType | undefined;
   todos: TodoTypes[];
+  sort: '' | 'active' | 'completed';
 }
 
 export interface TodoListType {

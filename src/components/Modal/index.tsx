@@ -1,8 +1,7 @@
 import React, { Dispatch, FC, FormEvent, SetStateAction, useState } from 'react';
-// import { addList } from '../../features/listsSlice';
 import classes from './Modal.module.scss';
-import { addList } from '../../features/todoAppSlice';
-import { useAppDispatch } from '../../features/store';
+import { addList } from '../../redux/todoAppSlice';
+import { useAppDispatch } from '../../redux/store';
 
 type ModalProps = {
   setModalIsVisible: Dispatch<SetStateAction<boolean>>;
