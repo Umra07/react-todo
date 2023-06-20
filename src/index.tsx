@@ -4,28 +4,8 @@ import './index.css';
 import store, { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import App from './App';
-
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import WelcomeBlock from './components/WelcomeBlock';
-import TasksBlock from './components/TasksBlock';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      {
-        path: '',
-        element: <WelcomeBlock />,
-      },
-      {
-        path: 'lists/:listId',
-        element: <TasksBlock />,
-      },
-    ],
-  },
-]);
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
